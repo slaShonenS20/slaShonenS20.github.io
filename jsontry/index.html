@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Pages から文字列を取得</title>
+</head>
+<body>
+  <div id="result"></div>
+
+  <script>
+    fetch('https://kanahiro.github.io/gh-pages-rest-api/sample/last_update')
+      .then(response => response.text())
+      .then(data => {
+        const resultElement = document.getElementById('result');
+        resultElement.innerHTML = `<b><font color="red">${data}</font></b>`;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>
